@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - EduLearn</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Admin Panel</span>
+            </div>
+            <ul class="admin-menu">
+                <li class="active"><a href="#" onclick="showAdminSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="#" onclick="showAdminSection('courses')"><i class="fas fa-book"></i> Courses</a></li>
+                <li><a href="#" onclick="showAdminSection('create-course')"><i class="fas fa-plus"></i> Create Course</a></li>
+                <li><a href="#" onclick="showAdminSection('users')"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="#" onclick="showAdminSection('payments')"><i class="fas fa-dollar-sign"></i> Payments</a></li>
+                <li><a href="#" onclick="showAdminSection('settings')"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div class="admin-user">
+                    <i class="fas fa-bell"></i>
+                    <div class="user-avatar">AD</div>
+                </div>
+            </div>
+            <div id="adminContent" class="admin-content"></div>
+        </main>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

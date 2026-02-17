@@ -1,0 +1,106 @@
+.payment-container {
+    min-height: 100vh;
+    background: var(--light);
+    padding: 2rem;
+}
+
+.payment-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+}
+
+.course-summary {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.course-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light);
+}
+
+.course-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.price-breakdown {
+    margin-top: 1.5rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.price-row.total {
+    border-top: 2px solid var(--light);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.payment-form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.payment-method {
+    padding: 1rem;
+    border: 2px solid var(--light);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-method:hover, .payment-method.active {
+    border-color: var(--primary);
+    background: var(--light);
+}
+
+.payment-method i {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.secure-note {
+    text-align: center;
+    color: var(--success);
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .payment-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+}

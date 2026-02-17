@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Player - EduLearn</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="player-container">
+        <aside class="course-sidebar">
+            <div class="course-header">
+                <h3>Course Content</h3>
+                <button onclick="window.history.back()" class="btn-secondary btn-sm">Back</button>
+            </div>
+            <div id="courseModules" class="course-modules"></div>
+        </aside>
+        <main class="player-main">
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </div>
+            <div class="lesson-info">
+                <h2 id="lessonTitle">Introduction to Web Development</h2>
+                <div class="lesson-meta">
+                    <span><i class="fas fa-clock"></i> 15:30</span>
+                    <span><i class="fas fa-eye"></i> 1,234 views</span>
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn-primary" onclick="markComplete()">Mark as Complete</button>
+                    <button class="btn-secondary" onclick="downloadResources()">Download Resources</button>
+                </div>
+                <div class="lesson-description">
+                    <h3>About this lesson</h3>
+                    <p id="lessonDescription">Learn the fundamentals of web development including HTML, CSS, and JavaScript basics.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/player.js"></script>
+</body>
+</html>

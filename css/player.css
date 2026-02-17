@@ -1,0 +1,105 @@
+.player-container {
+    display: flex;
+    height: 100vh;
+}
+
+.course-sidebar {
+    width: 350px;
+    background: var(--white);
+    border-right: 1px solid var(--light);
+    overflow-y: auto;
+}
+
+.course-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-modules {
+    padding: 1rem;
+}
+
+.module {
+    margin-bottom: 1rem;
+}
+
+.module-title {
+    padding: 1rem;
+    background: var(--light);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.module-lessons {
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.lesson {
+    padding: 0.75rem;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.lesson:hover {
+    background: var(--light);
+    border-left-color: var(--primary);
+}
+
+.lesson.active {
+    background: var(--light);
+    border-left-color: var(--primary);
+    color: var(--primary);
+}
+
+.lesson.completed {
+    color: var(--success);
+}
+
+.player-main {
+    flex: 1;
+    overflow-y: auto;
+    background: #000;
+}
+
+.video-container {
+    position: relative;
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    max-height: 70vh;
+}
+
+.lesson-info {
+    background: var(--white);
+    padding: 2rem;
+}
+
+.lesson-meta {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+    color: var(--gray);
+}
+
+.lesson-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.lesson-description {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--light);
+}

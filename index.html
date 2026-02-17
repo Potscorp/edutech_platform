@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Online Learning Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduLearn</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-secondary" onclick="openModal('loginModal')">Login</button>
+                <button class="btn-primary" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Learn Without Limits</h1>
+                <p>Access thousands of courses from world-class instructors. Start your learning journey today.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary btn-lg" onclick="openModal('signupModal')">Get Started</button>
+                    <button class="btn-outline btn-lg" onclick="scrollToSection('courses')">Explore Courses</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>50K+</h3>
+                        <p>Students</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1000+</h3>
+                        <p>Courses</p>
+                    </div>
+                    <div class="stat">
+                        <h3>200+</h3>
+                        <p>Instructors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose EduLearn?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-video"></i>
+                    <h3>HD Video Lessons</h3>
+                    <p>High-quality video content with lifetime access</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certificates</h3>
+                    <p>Earn certificates upon course completion</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Learning</h3>
+                    <p>Learn anytime, anywhere on any device</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Popular Courses</h2>
+            <div class="course-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="programming">Programming</button>
+                <button class="filter-btn" data-category="design">Design</button>
+                <button class="filter-btn" data-category="business">Business</button>
+                <button class="filter-btn" data-category="marketing">Marketing</button>
+            </div>
+            <div class="courses-grid" id="coursesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming</h3>
+                    <p>150+ courses</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Design</h3>
+                    <p>120+ courses</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Business</h3>
+                    <p>200+ courses</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Marketing</h3>
+                    <p>80+ courses</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photography</h3>
+                    <p>60+ courses</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Music</h3>
+                    <p>90+ courses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About EduLearn</h2>
+                    <p>We're on a mission to democratize education and make quality learning accessible to everyone, everywhere. Our platform connects learners with expert instructors from around the world.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check"></i> Flexible learning schedules</li>
+                        <li><i class="fas fa-check"></i> Affordable pricing</li>
+                        <li><i class="fas fa-check"></i> Industry-recognized certificates</li>
+                        <li><i class="fas fa-check"></i> 24/7 support</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="about-placeholder">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"EduLearn transformed my career. The courses are practical and taught by industry experts."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div>
+                            <h4>John Smith</h4>
+                            <span>Software Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The flexibility to learn at my own pace while working full-time was exactly what I needed."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <span>Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Outstanding platform with high-quality content. Highly recommend to anyone looking to upskill."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MD</div>
+                        <div>
+                            <h4>Mike Davis</h4>
+                            <span>UX Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@edulearn.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Learning St, Education City</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-graduation-cap"></i> EduLearn</h3>
+                    <p>Empowering learners worldwide with quality education.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Programming</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EduLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form onsubmit="handleLogin(event)">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary btn-block">Login</button>
+                <p class="modal-footer">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <form onsubmit="handleSignup(event)">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <select required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px; font-family: inherit;">
+                    <option value="">Select Role</option>
+                    <option value="student">Student</option>
+                    <option value="instructor">Instructor</option>
+                </select>
+                <button type="submit" class="btn-primary btn-block">Sign Up</button>
+                <p class="modal-footer">Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Page (Hidden by default) -->
+    <div id="dashboardPage" class="dashboard-page" style="display: none;">
+        <div class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduLearn</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#" onclick="showDashboardSection('overview')"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#" onclick="showDashboardSection('my-courses')"><i class="fas fa-book"></i> My Courses</a></li>
+                <li><a href="#" onclick="showDashboardSection('progress')"><i class="fas fa-chart-line"></i> Progress</a></li>
+                <li><a href="#" onclick="showDashboardSection('certificates')"><i class="fas fa-certificate"></i> Certificates</a></li>
+                <li><a href="#" onclick="showDashboardSection('messages')"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="#" onclick="showDashboardSection('settings')"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+        <div class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Welcome back, Student!</h1>
+                <div class="user-profile">
+                    <i class="fas fa-bell"></i>
+                    <div class="user-avatar">ST</div>
+                </div>
+            </div>
+            <div id="dashboardContent" class="dashboard-content"></div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
