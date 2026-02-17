@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: edutech-backend
+    env: python
+    region: oregon
+    buildCommand: cd edutech_backend && pip install -r requirements.txt
+    startCommand: cd edutech_backend && gunicorn edutech_api.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0

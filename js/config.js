@@ -1,6 +1,8 @@
 // API Configuration
 const API_CONFIG = {
-    BASE_URL: 'http://localhost:8000/api',
+    BASE_URL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? 'http://localhost:8000/api' 
+        : 'https://edutech-backend.onrender.com/api',
     ENDPOINTS: {
         // Auth endpoints
         SIGNUP: '/auth/signup/',
