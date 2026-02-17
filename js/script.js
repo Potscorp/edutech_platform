@@ -197,15 +197,27 @@ function showDashboard() {
     document.querySelector('.footer').style.display = 'none';
     
     document.getElementById('dashboardPage').style.display = 'flex';
+    
+    // Update dashboard header with user name
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    const dashboardHeader = document.querySelector('.dashboard-header h1');
+    if (dashboardHeader && currentUser.name) {
+        dashboardHeader.textContent = `Welcome back, ${currentUser.name}!`;
+    }
+    
     showDashboardSection('overview');
 }
 
 function showDashboardSection(section) {
     const content = document.getElementById('dashboardContent');
     
-    // Update active menu item
-    document.querySelectorAll('.sidebar-menu li').forEach(li => li.classList.remove('active'));
-    event.target.closest('li').classList.add('active');
+    // Update active menu item - fixed to handle event properly
+    const menuItems = document.querySelectorAll('.sidebar-menu li');
+    menuItems.forEach(li => li.classList.remove('active'));
+    if (window.event && window.event.target) {
+        const clickedItem = window.event.target.closest('li');
+        if (clickedItem) clickedItem.classList.add('active');
+    }
     
     switch(section) {
         case 'overview':
@@ -325,20 +337,21 @@ function showDashboardSection(section) {
             break;
             
         case 'settings':
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
             content.innerHTML = `
                 <h2>Settings</h2>
                 <div class="dashboard-card">
                     <h3>Profile Settings</h3>
-                    <form style="margin-top: 1rem;">
-                        <input type="text" placeholder="Full Name" value="Student Name" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px;">
-                        <input type="email" placeholder="Email" value="student@email.com" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px;">
+                    <form style="margin-top: 1rem;" onsubmit="event.preventDefault(); alert('Profile updated!');">
+                        <input type="text" placeholder="Full Name" value="${currentUser.name || ''}" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px;">
+                        <input type="email" placeholder="Email" value="${currentUser.email || ''}" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px;">
                         <input type="tel" placeholder="Phone" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px;">
                         <button type="submit" class="btn-primary">Update Profile</button>
                     </form>
                 </div>
                 <div class="dashboard-card" style="margin-top: 2rem;">
                     <h3>Change Password</h3>
-                    <form style="margin-top: 1rem;">
+                    <form style="margin-top: 1rem;" onsubmit="event.preventDefault(); alert('Password changed!');">
                         <input type="password" placeholder="Current Password" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px;">
                         <input type="password" placeholder="New Password" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px;">
                         <input type="password" placeholder="Confirm New Password" style="width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid var(--light); border-radius: 8px;">
